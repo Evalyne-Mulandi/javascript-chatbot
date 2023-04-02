@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot Web App</title>
+  </head>
+  <script src="chatbot.js"></script>
+  <link rel="stylesheet" href="chatbot.css">
+  <body>
+    <div class="head">  
+      <h1>STUDENT INQUIRY CHATBOT</h1>
+  
+    <div class="all">
+       
+      <img src="kabarak.jpeg" alt="kabarak logo">
+    <div id="chatbot-container">
+      <div id="chatbot-dialog"></div>
+      <div id="chatbot-input">
+        <input type="text" id="chatbot-text" placeholder="Ask me a question...">
+         
+        <button id="chatbot-submit">Submit</button>
+        <button id="chatbot-clear">
+          clear
+       </button>
+      </div>
+      </div>
+    </div>
+      <!--<a href="login.html">login</a>-->
+    </div>
+    <script>
+      // Define chatbot responses
+      const chatbotDialog = document.getElementById("chatbot-dialog");
+      const responses = {
+        "hi": "hi hello there",
+        "hello":"Hello, how may i help you today?",
+        "hey":"Hello, how can i assit you today?",
+        "good morning":"Good morning to you how may i assit you today?",
+        "morning":"Good morning to you how may i assit you today?",
+        "good evening":"  Good evening too how may i assit you today?",
+        "evening":"  Good evening too how may i assit you today?",
+        "good afternoon":"Good afternoon how may i assit you today?",
+        "afternoon":"Good afternoon how may i assit you today?",
+        "how are you":"As a language model, I do not have emotions,\n but I am functioning properly and am ready to assist you with any academic questions you may have.\n How can I assist you today?",
+        "school fees": "kindly visit kabarak student finance with your student ID for further assistance",
+        "school elections": "kabarak school elections are held annually, \n the current school president is Karen ",
+        "attachment": "PRE ATTACHMENT and POST ATTACHMENT",
+        "pre attachment":"This is only available for third year second semester students",
+        "post attachment":"This is only available for fourth year second semester students",
+        "missing marks": "Kindly visit school of business SAA secretary office ,\n get a missing marks form , \n fill the missing units and consult the secetrary for further assitances",
+        "incomplete marks": "This means that you are either missing the exam or cat marks, \n visit the SAA for further assistance",
+        "exam card":"Your exam card is only available  when you have cleared the school fee,\n you can then collect it from the school of business department",
+        "retake":"When you haven't met the  40% academic exam requirements you are required to re-register the unit again ",
+        "attachment letters":"The letters are issued when one has attained the correct academic score(i.e one retake,two missing marks) pick the letters from your respective school departments",
+        "lectures contacts":"",
+        "attachment assessment":"The assessment is done when the required duration is done where by  minimum duration is 2 months",
+        "transcript":"you can download it from your student's portal or you can ask the SAA  to help you print it",
+        "collection of certificate":"once you have completed your academic journey and graduated, you are required to come and collect your academic transcript from the admission's office",
+        "course registration":"NORMAL REGISTRATION,SPECIAL EXAMS ,RETAKE REGISTRATION,SUPPLEMENTARY EXAM",
+        "normal":"when you have cleared the previous semester school fees ",
+        "normal registration":"when you have cleared the previous semester school fees ",
+        "special exam":"when you had missed some exams with valid reasons the school is obliged to give you the exams.For further guidance you can contact the school SAA through <strong>+254712312312</strong> ",
+        "special":"when you had missed some exams with valid reasons the school is obliged to give you the exams.For further guidance you can contact the school SAA through <strong>+254712312312</strong> ",
+        "retake registration":"You are advised to visit your student's portal ,course registration section select retake option and register the unit you are retaking",
+        "supplementary exam":"This is offered only to students who are on their final year who are yet to graduate,incase they got a retake",
+        "supplementary":"This is offered only to students who are on their final year who are yet to graduate,incase they got a retake",
+        "graduation":"Those who have achieved the university academic requirements are allowed to graduate",
+        "graduation gowns":"the school will send a memo to your school email,explaining all the details,when and where to pick the gowns",
+        "graduation certificate":"once you have completed your academic journey and graduated, you are required to come and collect your academic transcript from the admission's office",
+        "timetable":"EXAMS OR CLASS TIMETABLE",
+        "exam timetable":"a draft timetable is usually released a month before and the final timetable is released days to exams",
+        "class timetable":"This is released a week before opening of the next semester",
+        "exam collision":"You are advised to visit the school timetabling office for further assistance",
+        "timetable collision":"You are advised to visit the school timetabling office for further assistance",
+        "lectures phone number":"",
+        "saa contact":" +25478345665",
+        "saa phone number":"+25478345665",
+        "exam qualification":"when you have paid full school fees and attained 80% class attendance",
+        "clearance form":"pick the forms from the admission office"
+      };
+      
+      // Define function to handle user input
+      function handleUserInput() {
+        const userInput = document.getElementById("chatbot-text").value;
+        if (responses.hasOwnProperty(userInput)) {
+          chatbotDialog.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
+          chatbotDialog.innerHTML += "<p><strong>Bot:</strong> " + responses[userInput] + "</p>";
+        } else {
+          chatbotDialog.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
+          chatbotDialog.innerHTML += "<p><strong>Chatbot:</strong> Sorry, I can't help you with that,\n I am only allowed to respond to questions with a specific scope.</p>";
+        }
+        document.getElementById("chatbot-text").value = "";
+      }
+      
+      // Add event listener to handle user input
+      document.getElementById("chatbot-submit").addEventListener("click", handleUserInput);
+      document.getElementById('chatbot-clear').addEventListener('click',clear)
+      //Define function to clear chatbot-dialog
+       function clear(){
+        chatbotDialog.innerHTML = "";
+       }
+    </script>
+    <!-- <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDTo4zTHEE5gIseM1lgvTrU_2DQduB23wc",
+        authDomain: "eveline-1a13b.firebaseapp.com",
+        projectId: "eveline-1a13b",
+        storageBucket: "eveline-1a13b.appspot.com",
+        messagingSenderId: "507216593356",
+        appId: "1:507216593356:web:74733db307c02fa4ac9d69",
+        measurementId: "G-ZNYHENR25K"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+    </script> -->
+  </body>
+</html>

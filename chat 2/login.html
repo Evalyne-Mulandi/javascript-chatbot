@@ -1,0 +1,115 @@
+<html>
+<head>
+
+<title>Login paget</title>
+</head>
+
+<script type="text/javascript">
+function display(form){
+if (form.username.value=="student") { 
+		if (form.password.value=="student") {              
+										location="chatbot.html" 
+											} else {
+													alert("Invalid Password")
+													}
+								} else {  alert("Invalid Username")
+										}
+						}
+			</script>			
+<body class="img">
+    <div>
+        <h1>STUDENT INQUIRY CHATBOT</h1>
+    </div>
+     
+<div class="form">
+     <!-- <div>
+        <img src="kabarak.jpeg" alt="kabarak logo">
+     </div> -->
+     <div>
+        <form>
+            <label class="label" for="">username</label>
+            <input type="text" placeholder="name" name="username" /><br><br>
+            <label class="label" for="">password</label>
+            <input type="password" placeholder="password" name="password"/><br><br>
+           
+                <input class="btn"  type="button" value="Login" onClick="display(this.form)"/>
+            </div>
+             
+     </div>
+</div>
+<style>
+    body{
+    
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(208, 209, 214);
+    
+}
+.form{
+    margin: 100px;
+    top: 70px;
+    align-items: center;
+    margin-left: 30%;
+    text-align: center;
+    background-color:transparent;
+    margin-right:30% ;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid ;
+     
+}
+@media  (max-width:1080px) {
+    .form{
+        width: 250px;
+        padding: 10px;
+        left: 20%;
+        top: 20px;
+        transform: translate(-50%,50%);
+        position: absolute;
+    }
+    input{
+        width: 100%;
+    }
+    .btn{
+        width: 100px;
+    }
+}
+input{
+    margin: 10px;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    
+}
+img{
+    margin:20px;
+}
+h1{
+    text-align: center;
+    color:  #eb6811;
+    padding:20px;
+    font-weight: bold;
+}
+.btn
+{
+    text-align: center;
+    width: 80px;
+    border-radius: 5px;   
+    color: white; 
+    background-color: #eb6811 ;
+}
+.img{
+background-size: cover;
+height: 100vh;
+background-image:linear-gradient(rgba(20,30,40,0.7),rgba(20,30,40,0.7)),url("https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_960_720.jpg")
+}
+.label{
+     font-size: 20px ;
+     font-weight: bold;
+     color:rgb(71, 197, 255);
+     
+}
+</style>
+</body>
+</html>
